@@ -1,6 +1,3 @@
--- エンジニア管理システム データベーステーブル作成
-
--- テーブル作成
 CREATE TABLE IF NOT EXISTS engineers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -13,7 +10,6 @@ CREATE TABLE IF NOT EXISTS engineers (
     INDEX idx_skill (skill)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ダミーデータ挿入
 INSERT INTO engineers (name, email, skill, experience_years, created_at) VALUES
 ('山田太郎', 'yamada@example.com', 'PHP, MySQL, Laravel', 5, NOW()),
 ('佐藤花子', 'sato@example.com', 'JavaScript, React, Node.js', 3, NOW()),
@@ -30,3 +26,4 @@ INSERT INTO engineers (name, email, skill, experience_years, created_at) VALUES
 ('井上十一', 'inoue@example.com', 'Python, Flask, Redis', 4, NOW()),
 ('木村十二', 'kimura@example.com', 'Java, Hibernate, MySQL', 5, NOW()),
 ('林十三', 'hayashi@example.com', 'PHP, Symfony, PostgreSQL', 3, NOW());
+
