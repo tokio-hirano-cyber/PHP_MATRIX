@@ -4,7 +4,6 @@ checkLogin();
 
 $pdo = getDBConnection();
 
-// 検索処理
 $search = $_GET['search'] ?? '';
 $where = '';
 $params = [];
@@ -14,7 +13,6 @@ if (!empty($search)) {
     $params[':search'] = '%' . $search . '%';
 }
 
-// エンジニア一覧取得
 $sql = "SELECT * FROM engineers " . $where . " ORDER BY id DESC";
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
@@ -236,3 +234,4 @@ $engineers = $stmt->fetchAll();
     </div>
 </body>
 </html>
+
