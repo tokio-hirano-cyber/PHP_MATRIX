@@ -4,7 +4,6 @@ checkLogin();
 
 $pdo = getDBConnection();
 
-// ID取得
 $id = $_GET['id'] ?? 0;
 
 if (empty($id)) {
@@ -22,3 +21,4 @@ try {
     die("削除エラー: " . $e->getMessage());
 }
 ?>
+
