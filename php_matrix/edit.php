@@ -6,7 +6,6 @@ $pdo = getDBConnection();
 $error = '';
 $success = '';
 
-// ID取得
 $id = $_GET['id'] ?? 0;
 
 if (empty($id)) {
@@ -14,7 +13,6 @@ if (empty($id)) {
     exit;
 }
 
-// 既存データ取得
 $sql = "SELECT * FROM engineers WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id' => $id]);
@@ -191,3 +189,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+
