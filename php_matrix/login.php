@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// 既にログインしている場合はリダイレクト
 if (isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit;
@@ -12,8 +11,7 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
-    
-    // 簡単な認証（実際の運用ではハッシュ化されたパスワードを使用）
+
     if ($username === 'admin' && $password === 'admin123') {
         $_SESSION['user_id'] = 1;
         $_SESSION['username'] = $username;
@@ -136,3 +134,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+
